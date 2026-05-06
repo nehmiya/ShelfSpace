@@ -1,0 +1,78 @@
+/* assets/animations.css */
+
+/* Smooth generic transition */
+.btn, .nav-links a, .form-control {
+    transition: all 0.3s ease;
+}
+
+/* Button hover effects */
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary:hover {
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+}
+
+.btn-outline:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Card Hover Effects */
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Fade in animation for page load */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.main-content {
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+.book-card {
+    animation: fadeIn 0.5s ease-out forwards;
+    opacity: 0;
+}
+
+/* Stagger card animations */
+.book-card:nth-child(1) { animation-delay: 0.1s; }
+.book-card:nth-child(2) { animation-delay: 0.15s; }
+.book-card:nth-child(3) { animation-delay: 0.2s; }
+.book-card:nth-child(4) { animation-delay: 0.25s; }
+.book-card:nth-child(5) { animation-delay: 0.3s; }
+.book-card:nth-child(6) { animation-delay: 0.35s; }
+.book-card:nth-child(7) { animation-delay: 0.4s; }
+.book-card:nth-child(8) { animation-delay: 0.45s; }
+
+/* Image hover zoom */
+.book-card .book-cover {
+    transition: transform 0.5s ease;
+}
+.book-card:hover .book-cover {
+    transform: scale(1.05);
+}
+.book-card {
+    /* ensure zoom doesn't break border radius */
+    border-radius: 12px;
+}
+.book-cover-container {
+    overflow: hidden;
+    border-radius: 12px 12px 0 0;
+}
