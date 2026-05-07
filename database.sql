@@ -10,8 +10,9 @@ CREATE TABLE IF NOT EXISTS users (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
-INSERT IGNORE INTO users (name, email, password, role) VALUES 
-('System Admin', 'admin@shelfspace.com', '$2y$10$vPZIt/QfW8V0rT7.HlJ6bO5U3R2oK.6D8iXh9h4cR0J3qA7R4o4mG', 'admin');
+INSERT INTO users (name, email, password, role) VALUES 
+('System Admin', 'admin@shelfspace.com', '$2y$10$uBxHhUFupO.jw4vNmanpb.rbXvUgXYkDCgWfQ.x.AbaC67pzucvQK', 'admin')
+ON DUPLICATE KEY UPDATE password = '$2y$10$uBxHhUFupO.jw4vNmanpb.rbXvUgXYkDCgWfQ.x.AbaC67pzucvQK', role = 'admin';
 
 CREATE TABLE IF NOT EXISTS categories (
     id INT AUTO_INCREMENT PRIMARY KEY,
